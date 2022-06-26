@@ -9,5 +9,18 @@
 .post-form{ 
     display: flex;
     flex-direction: column;
+    min-width: 20em;
+}
 
+[text-area ='postContent']{
+    resize: none;
+    width: auto;
+    height: 10vh;
+}
+
+[post-form-item ='postFormItem']{
+    border-radius: 5px;  
+    font-size:20px; 
+    padding-left: 5px; 
+    margin-top:10px
 }

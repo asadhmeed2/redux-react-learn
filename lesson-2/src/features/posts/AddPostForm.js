@@ -23,6 +23,7 @@ const AddPostForm = () => {
        title.length && content.length && userId && despatch(postAdded( title, content, userId ));
        setTitle('');
        setContent('');
+       setUserId('');
     }
 
     const usersOptions = users.map(user => (
@@ -31,22 +32,24 @@ const AddPostForm = () => {
         </option>
     ))
 
+    const canSave = Boolean(title) && Boolean(content) && Boolean(userId)
+
     return (<section>
             <h2>Add a New Post</h2>
             <form className='post-form'>
                 <label htmlFor='postTitle'>Post Title</label>
-                <input type='text' name='postTitle' id="postTitle" value={title} onChange={onTitleChanged}/>
+                <input type='text' name='postTitle' post-form-item ='postFormItem' id="postTitle" value={title} onChange={onTitleChanged}/>
 
                 <label htmlFor ='postAuthor'>Author</label>
-                <select id='postAuthor' value={userId} onChange={onAuthorChanged}>
+                <select id='postAuthor' post-form-item ='postFormItem' value={userId} onChange={onAuthorChanged}>
                     <option value=''></option>
                     {usersOptions}
                 </select>
 
                 <label htmlFor='postContent'>Content</label>
-                <textarea name='postContent' id='postContent' value = {content} onChange={onContentChanged}/>
+                <textarea name='postContent' post-form-item ='postFormItem' id='postContent' text-area='postContent'value = {content} onChange={onContentChanged}/>
 
-                <button type='button' onClick={onSaveHandler}>Save Post</button>
+                <button type='button' post-form-item ='postFormItem' onClick={onSaveHandler} disabled={!canSave}>Save Post</button>
             </form>
     </section>
     )
