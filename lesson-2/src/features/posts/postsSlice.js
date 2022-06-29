@@ -2,7 +2,7 @@ import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit';
 import { sub } from 'date-fns';
 import axios from 'axios';
 
-const POSTS_URL = 'https://jsonplaceholder.typiconde.com/posts'
+const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts'
 
 const initialState ={
     posts:[],
@@ -37,11 +37,11 @@ const postsSlice = createSlice({
                         date: new Date().toISOString(),
                         userId,
                         reactions: {
-                            thumbsUp: 0,
-                            wow: 0,
+                            eyes: 0,
                             heart: 0,
+                            hooray: 0,
                             rocket: 0,
-                            coffee: 0
+                            thumbsUp: 0,
                         }
                     }
                 }
@@ -65,11 +65,11 @@ extraReducers: ( builder )=>{
         const loadedPosts = action.payload.map(post =>{
             post.data =sub(new Date(),{minutes:min++}).toISOString()
             post.reactions = {
-                thumbsUp: 0,
-                hooray:0,
-                heart: 0,
-                rocket: 0,
                 eyes: 0,
+                heart: 0,
+                hooray: 0,
+                rocket: 0,
+                thumbsUp: 0
             }
             return post;
         }) 

@@ -9,10 +9,10 @@ const postsExcerpt = ({post}) => {
   return (
     <article className='post'>
             <h3 className='post-title'>{post?.title}</h3>
-            <p className='post-content'>{post?.content.substring(0,100)}</p>
+            <p className='post-content'>{post?.body.substring(0,100)}</p>
             <p className ='postCredits'>
-                <PostAuthor userId = { post?.userId }/> 
-                <TimeAgo timestamp={post.date}/>
+                <PostAuthor userId = { post.userId }/> 
+                <TimeAgo timestamp={post.data}/>
             </p>
             <ReactionButtons post={post}/>
         </article>
