@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectAllPosts } from './postsSlice';
+import { selectAllPosts, getPostsStatus, getPostsError, fetchPosts } from './postsSlice';
 import PostAuthor from './PostAuthor';
 import  ReactionButtons  from './ReactionButtons'
 import './posts.style.css'
