@@ -21,7 +21,6 @@ const PostsList= ()=>{
     if(postsStatus === 'loading'){
         content =<p>"loading..."</p>
     }else if(postsStatus === 'succeeded'){
-        console.log(posts.slice());
         const orderedPostes = posts.slice().sort((a,b)=>b.data.localeCompare(a.data))
         content = orderedPostes.map(post=> <PostsExcerpt key={post.id} post={post}/>)
     }else if(postsStatus === 'failed'){
