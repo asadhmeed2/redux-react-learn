@@ -12,7 +12,7 @@ const postsExcerpt = ({post}) => {
             <p className='post-content'>{post?.body.substring(0,100)}</p>
             <p className ='postCredits'>
                 <PostAuthor userId = { post.userId }/> 
-                <TimeAgo timestamp={post.data}/>
+                <TimeAgo timestamp={post.date}/>
             </p>
             <ReactionButtons post={post}/>
         </article>

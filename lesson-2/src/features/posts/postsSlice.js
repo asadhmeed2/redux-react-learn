@@ -63,7 +63,7 @@ extraReducers: ( builder )=>{
         state.status = 'succeeded'
         let min = 1;
         const loadedPosts = action.payload.map(post =>{
-            post.data =sub(new Date(),{minutes:min++}).toISOString()
+            post.date =sub(new Date(),{minutes:min++}).toISOString()
             post.reactions = {
                 wow: 0,
                 heart: 0,
@@ -82,7 +82,7 @@ extraReducers: ( builder )=>{
     })
     .addCase(addNewPost.fulfilled,(state,action)=>{
         action.payload.userId = Number(action.payload.userId);
-        action.payload.data = new Date().toISOString();
+        action.payload.date = new Date().toISOString();
         action.payload.reactions = {
             wow: 0,
             heart: 0,
