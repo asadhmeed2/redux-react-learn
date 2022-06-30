@@ -37,9 +37,9 @@ const postsSlice = createSlice({
                         date: new Date().toISOString(),
                         userId,
                         reactions: {
-                            eyes: 0,
+                            wow: 0,
                             heart: 0,
-                            hooray: 0,
+                            coffee: 0,
                             rocket: 0,
                             thumbsUp: 0,
                         }
@@ -65,11 +65,11 @@ extraReducers: ( builder )=>{
         const loadedPosts = action.payload.map(post =>{
             post.data =sub(new Date(),{minutes:min++}).toISOString()
             post.reactions = {
-                eyes: 0,
+                wow: 0,
                 heart: 0,
-                hooray: 0,
+                coffee: 0,
                 rocket: 0,
-                thumbsUp: 0
+                thumbsUp: 0,
             }
             return post;
         }) 
@@ -79,6 +79,19 @@ extraReducers: ( builder )=>{
     .addCase(fetchPosts.rejected, (state,action)=>{
         state.status = 'failed'
         state.error = action.error.message
+    })
+    .addCase(addNewPost.fulfilled,(state,action)=>{
+        action.payload.userId = Number(action.payload.userId);
+        action.payload.data = new Date().toISOString();
+        action.payload.reactions = {
+            wow: 0,
+            heart: 0,
+            coffee: 0,
+            rocket: 0,
+            thumbsUp: 0,
+        }
+        console.log(action.payload);
+        state.posts.push(action.payload)
     })
 }
 })
