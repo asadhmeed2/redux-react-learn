@@ -11,7 +11,9 @@ const postsExcerpt = ({post}) => {
             <h3 className='post-title'>{post?.title}</h3>
             <p className='post-content'>{post?.body.substring(0,75)}...</p>
             <p className ='postCredits'>
+                <div>
                 <Link to={`post/${post.id}`}>View Post</Link>
+                </div>
                 <PostAuthor userId = { post.userId }/> 
                 <TimeAgo timestamp={post.date}/>
             </p>
