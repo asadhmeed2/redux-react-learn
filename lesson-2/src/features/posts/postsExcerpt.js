@@ -8,7 +8,7 @@ import './posts.style.css';
 const postsExcerpt = ({post}) => {
   return (
     <article className='post'>
-            <h3 className='post-title'>{post?.title}</h3>
+            <h2 className='post-title'>{post?.title}</h2>
             <p className='post-content'>{post?.body.substring(0,75)}...</p>
             <p className ='postCredits'>
                 <div>
