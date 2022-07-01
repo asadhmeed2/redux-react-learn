@@ -1,8 +1,8 @@
-import PostAuthor from "./PostAuthor"
-import TimeAgo from "./TimeAgo"
-import ReactionButtons from "./ReactionButtons"
-import {Link} from "react-router-dom"
-import './posts.style.css'
+import PostAuthor from "./PostAuthor";
+import TimeAgo from "./TimeAgo";
+import ReactionButtons from "./ReactionButtons";
+import {Link} from "react-router-dom";
+import './posts.style.css';
 
 
 const postsExcerpt = ({post}) => {

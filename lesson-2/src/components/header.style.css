@@ -1,0 +1,20 @@
+.nav-container{
+    background: rgb(74, 90, 68);
+    display: flex;
+    gap:80vw;
+    padding:10px;
+}
+.nav{
+    display: flex;
+    list-style: none;
+    gap: 3vw;
+    margin-top:5px;
+}
+.nav-link{
+    text-decoration: none;
+    color: white;
+}
+.nav-link:hover{
+    text-decoration: underline;
+    color: black;
+}
