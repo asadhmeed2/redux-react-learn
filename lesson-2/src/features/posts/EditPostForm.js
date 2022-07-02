@@ -107,7 +107,6 @@ const EditPostForm = () => {
                <button
                type="button"
                onClick={deletePostHandler}
-               
                >
                     Delete Post
                </button>
