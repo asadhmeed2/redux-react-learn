@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPostById, updatePost } from './postsSlice';
+import { getPostById, updatePost, deletePost } from './postsSlice';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { selectAllUsers } from "../users/usersSlice";
@@ -36,17 +36,17 @@ const EditPostForm = () => {
     const onSavePostClicked = () => {
         if (canSave) {
             try {
-                setRequestStatus('pending')
-                dispatch(updatePost({ id: post.id, title, body: content, userId, reactions: post.reactions })).unwrap()
+                setRequestStatus('pending');
+                dispatch(updatePost({ id: post.id, title, body: content, userId, reactions: post.reactions })).unwrap();
 
-                setTitle('')
-                setContent('')
-                setUserId('')
-                navigate(`/post/${postId}`)
+                setTitle('');
+                setContent('');
+                setUserId('');
+                navigate(`/post/${postId}`);
             } catch (err) {
-                console.error('Failed to save the post', err)
+                console.error('Failed to save the post', err);
             } finally {
-                setRequestStatus('idle')
+                setRequestStatus('idle');
             }
         }
     }
@@ -58,7 +58,20 @@ const EditPostForm = () => {
         >{user.name}</option>
     ))
 
-   
+    const deletePostHandler = () => {
+        try{
+            setRequestStatus('pending');
+            dispatch(deletePost({ id: post.id })).unwrap();
+            setTitle('')
+            setContent('')
+            setUserId('')
+            navigate(`/`)
+        }catch (err) {
+            console.error('Failed to delete the post', err)
+        }finally {
+                setRequestStatus('idle')
+        }
+    }
 
     return (
         <section>
@@ -91,7 +104,13 @@ const EditPostForm = () => {
                 >
                     Save Post
                 </button>
+               <button
+               type="button"
+               onClick={deletePostHandler}
                
+               >
+                    Delete Post
+               </button>
             </form>
         </section>
     )
