@@ -27,8 +27,7 @@ export const updatePost = createAsyncThunk('posts/updatePost', async (initialPos
         return response.data
     } catch (err) {
         //return err.message 
-        // becuse we connot update jsonplaceholder api post  
-        return initialPost; 
+        return initialPost;// becuse we connot update jsonplaceholder api post 
     }
 })
 
@@ -60,11 +59,11 @@ const postsSlice = createSlice({
                         date: new Date().toISOString(),
                         userId,
                         reactions: {
+                            thumbsUp: 0,
                             wow: 0,
                             heart: 0,
-                            coffee: 0,
                             rocket: 0,
-                            thumbsUp: 0,
+                            coffee: 0,
                         }
                     }
                 }
@@ -88,11 +87,11 @@ extraReducers: ( builder )=>{
         const loadedPosts = action.payload.map(post =>{
             post.date =sub(new Date(),{minutes:min++}).toISOString()
             post.reactions = {
+                thumbsUp: 0,
                 wow: 0,
                 heart: 0,
-                coffee: 0,
                 rocket: 0,
-                thumbsUp: 0,
+                coffee: 0,
             }
             return post;
         }) 
@@ -107,11 +106,12 @@ extraReducers: ( builder )=>{
         action.payload.userId = Number(action.payload.userId);
         action.payload.date = new Date().toISOString();
         action.payload.reactions = {
+            thumbsUp: 0,
             wow: 0,
             heart: 0,
-            coffee: 0,
             rocket: 0,
-            thumbsUp: 0,
+            coffee: 0,
+            
         }
         console.log(action.payload);
         state.posts.push(action.payload)
