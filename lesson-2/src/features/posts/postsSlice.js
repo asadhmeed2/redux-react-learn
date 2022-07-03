@@ -145,9 +145,8 @@ export const selectAllPosts = (state) => state.posts.posts;
 export const getPostsStatus = (state) => state.posts.status;
 export const getPostsError = (state) => state.posts.error;
 
-export const getPostById =(state,postId)=>{
-    return state.posts.posts.find(post=> post.id === postId)
-}
+export const getPostById =(state,postId)=> state.posts.posts.find(post=> post.id === postId)
+
 
 
 export const { postAdded, reactionAdded } = postsSlice.actions; 

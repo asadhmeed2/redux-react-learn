@@ -5,7 +5,7 @@ const USERS_URL = 'http://jsonplaceholder.typicode.com/users'
 
 const initialState =[]
 
-export const fetchUsers = createAsyncThunk('usrs/fetchUsrs',async ()=>{
+export const fetchUsers = createAsyncThunk('users/fetchUsers',async ()=>{
     try{
         const response = await axios.get(USERS_URL);
         return response.data;
@@ -26,6 +26,7 @@ const usersSlice = createSlice({
 })
 
 export const selectAllUsers = (state)=> state.users;
+export const getUserById = (state,userId)=> state.users.find(user=> user.id === userId);
 
 // export const {} = usersSlice.actions;
 
