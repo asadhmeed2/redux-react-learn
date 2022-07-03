@@ -5,20 +5,18 @@ import { getUserById } from "./usersSlice"
 
 
 const UserPage = () => {
-  const { userId } =useParams()
-  const user =useSelector(state=> getUserById(state,Number(userId)));
-  
-
-  const postsForUser = useSelector(state=>{
+    const { userId } =useParams()
+    const user =useSelector(state=> getUserById(state,Number(userId)));
+    
+    const postsForUser = useSelector(state=>{
     const posts =selectAllPosts(state);
-    return posts.filter(post=> post.userId !== Number(userId));
-  })
-  
-  const postTitles = postsForUser.map(post=>(
+        return posts.filter(post=> post.userId === Number(userId));
+    })
+    const postTitles = postsForUser.map(post=>(
     <li key={post.id}>
         <Link to={`/post/${post.id}`}>{post.title}</Link>
     </li>
-  ))
+    ))
 
     return (
     <section>
@@ -26,7 +24,7 @@ const UserPage = () => {
 
         <ol>{postTitles}</ol>
     </section>
-  )
+    )
 }
 
 export default UserPage

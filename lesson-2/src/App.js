@@ -20,7 +20,7 @@ function App() {
           </Route>
           <Route path="user">
             <Route index element={<UsersList/>}/>
-            <Route path=":postId" element={<UserPage/>}/>
+            <Route path=":userId" element={<UserPage/>}/>
           </Route>
           <Route path="*" element={<Navigate to='/' replace/>}/>
         </Route>

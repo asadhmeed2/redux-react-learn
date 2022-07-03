@@ -1,14 +1,15 @@
 .nav-container{
     background: rgb(140, 146, 91);
     display: flex;
-    gap:80vw;
     padding:10px;
+    justify-content:space-between;
+    padding:  10px 50px;
 }
 .nav{
     display: flex;
     list-style: none;
     gap: 3vw;
-    margin-top:5px;
+    margin-top:10px;
 }
 .nav-link{
     text-decoration: none;
