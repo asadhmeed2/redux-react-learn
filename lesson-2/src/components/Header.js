@@ -13,7 +13,7 @@ const Header = ( )=>{
             <li><Link to="/" className="nav-link">Home</Link></li>
             <li><Link to="post" className="nav-link">Posts</Link></li>
             <li><Link to="user" className="nav-link">Users</Link></li>
-            <button type='botton' class='count-button' onClick={()=>dispatch(increaseCount())}>{count}</button>
+            <button type='botton' className='count-button' onClick={()=>dispatch(increaseCount())}>{count}</button>
         </nav>
     </header>
     )

@@ -19,7 +19,7 @@ const UserPage = () => {
     <section>
         <h2>{user?.name}</h2>
 
-        <ol>{postTitles}</ol>
+        <ol style={{marginLeft:'30px'}}>{postTitles}</ol>
     </section>
     )
 }
