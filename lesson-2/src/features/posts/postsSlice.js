@@ -5,10 +5,10 @@ import axios from 'axios';
 const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts'
 
 const initialState ={
-    posts:[],
+    posts: [],
     status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
     error: null,
-    count:0
+    count: 0,
 }
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
@@ -54,6 +54,9 @@ const postsSlice = createSlice({
             existingPsot.reactions[reaction]++;
         }
     },
+    increaseCount: (state,action)=>{
+        state.count = state.count + 1;
+    }
 },
 extraReducers: ( builder )=>{
     builder.addCase(fetchPosts.pending,(state,action)=>{
@@ -122,11 +125,12 @@ extraReducers: ( builder )=>{
 export const selectAllPosts = (state) => state.posts.posts;
 export const getPostsStatus = (state) => state.posts.status;
 export const getPostsError = (state) => state.posts.error;
+export const getCount = (state) => state.posts.count;
 
 export const getPostById =(state,postId)=> state.posts.posts.find(post=> post.id === postId)
 
 
 
-export const { postAdded, reactionAdded } = postsSlice.actions; 
+export const { reactionAdded, increaseCount } = postsSlice.actions; 
 
 export default postsSlice.reducer;
