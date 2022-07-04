@@ -131,7 +131,7 @@ export const getPostById =(state,postId)=> state.posts.posts.find(post=> post.id
 
 export const selectPostsByUser =createSelector(
     [selectAllPosts,(state,userId)=>userId],
-    (posts,userId)=> posts.filter(post => post.user === userId)
+    (posts,userId)=> posts.filter(post => post.userId === userId)
 )
 
 
