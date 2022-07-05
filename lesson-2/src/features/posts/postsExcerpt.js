@@ -12,9 +12,7 @@ import './posts.style.css';
 const PostsExcerpt = ({ postId }) => {
 
   // part of the state normalization solution
-  const post = useSelector(state=>{
-    return selectPostById(state, postId)
-  });
+  const post = useSelector(state=>selectPostById(state, postId));
 
   return (
     <article className='post'>

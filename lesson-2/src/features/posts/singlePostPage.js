@@ -10,9 +10,7 @@ import { useParams, Link } from "react-router-dom";
 
 const SinglePostPage =() =>{
     const { postId } =useParams();
-    console.log(postId);
     const post = useSelector((state)=> selectPostById(state,Number(postId)));
-    console.log(post);
 
     if(!post) {
         return (
