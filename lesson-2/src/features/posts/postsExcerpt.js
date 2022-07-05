@@ -22,4 +22,17 @@ const postsExcerpt = ({post}) => {
   )
 }
 
-export default postsExcerpt
+export default postsExcerpt;
+
+//to solve the problem of rerender all the post when the user press a reation button, we use on of two solutions
+/**\
+ * A. react solution
+ *  1.import react
+ *    inport React from 'react'
+ *  2.change const to let of the component 
+ *    const postsExcerpt = ({post}) -> let postsExcerpt=({post})
+ *  3.
+ *    PostssExcerpt = rReact.memo(PostsExcerpt)
+ * 
+ * this solution well reander the component only when the prop data change
+ */
