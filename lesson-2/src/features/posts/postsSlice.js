@@ -11,7 +11,7 @@ const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
 
 // part of the state normalization solution
 const postsAdapter = createEntityAdapter({
-    sortComparer: ( a, b ) =>b.date.localeCompare(a.date)
+    sortComparer: (a, b) => b.date.localeCompare(a.date)
 })
 
 // part of the state normalization solution
@@ -66,7 +66,7 @@ const postsSlice = createSlice({
     reducers: {
     reactionAdded : (state,action)=>{
         const { postId ,reaction } =action.payload;
-
+        console.log( 'state postsSlice',initialState);
         // part of the state normalization solution
         const existingPost = state.entities[postId]
         // const existingPsot = state.posts.find(post=> post.id === postId)
@@ -153,10 +153,10 @@ extraReducers: ( builder )=>{
 
  // part of the state normalization solution
  export const {
-    selectAll:selectAllPosts,
-    selectById:getPostById,
+    selectAll: selectAllPosts,
+    selectById: selectPostById,
     selectIds: selectPostIds
- } = postsAdapter.getSelectors(state => state.posts)
+ } = postsAdapter.getSelectors(state =>  state.posts)
 
 // export const selectAllPosts = (state) => state.posts.posts;
 // export const getPostById =(state,postId)=> state.posts.posts.find(post=> post.id === postId);

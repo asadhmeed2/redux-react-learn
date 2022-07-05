@@ -5,14 +5,17 @@ import {Link} from "react-router-dom";
 
 // part of the state normalization solution
 import { useSelector } from "react-redux";
-import { getPostById } from "./postsSlice";
+import { selectPostById } from "./postsSlice";
 import './posts.style.css';
 
 
 const PostsExcerpt = ({ postId }) => {
-  
+
   // part of the state normalization solution
-  const post = useSelector(state=>getPostById(state, postId));
+  const post = useSelector(state=>{
+    console.log(postId);
+    return selectPostById(state, postId)
+  });
 
   return (
     <article className='post'>
