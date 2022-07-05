@@ -13,7 +13,6 @@ const PostsExcerpt = ({ postId }) => {
 
   // part of the state normalization solution
   const post = useSelector(state=>{
-    console.log(postId);
     return selectPostById(state, postId)
   });
 

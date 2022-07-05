@@ -22,7 +22,8 @@ const PostsList= ()=>{
         content =<p>"loading..."</p>
     }else if(postsStatus === 'succeeded'){
          // part of the state normalization solution
-        content = orderedPostsIds.map(postId =><PostsExcerpt key={postId} post={postId}/>)
+         console.log(orderedPostsIds);
+        content = orderedPostsIds.map(postId =><PostsExcerpt key={postId} postId={postId}/>)
         // const orderedPostes = posts.slice().sort((a,b)=>b.date.localeCompare(a.date))
         // content = orderedPostes.map(post=> <PostsExcerpt key={post.id} post={post}/>)
     }else if(postsStatus === 'failed'){

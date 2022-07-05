@@ -66,7 +66,6 @@ const postsSlice = createSlice({
     reducers: {
     reactionAdded : (state,action)=>{
         const { postId ,reaction } =action.payload;
-        console.log( 'state postsSlice',initialState);
         // part of the state normalization solution
         const existingPost = state.entities[postId]
         // const existingPsot = state.posts.find(post=> post.id === postId)
