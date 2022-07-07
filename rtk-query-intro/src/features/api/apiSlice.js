@@ -7,3 +7,8 @@ export const apiSlice =createApi({
         query:()=>'/todos',
     })})
 })
+
+//custom hooks from apiSlice
+export const {
+        useGetTodosQuery 
+    }= apiSlice;
