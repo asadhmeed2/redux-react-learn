@@ -15,13 +15,13 @@ const TodoList = () => {
     const newItemSection = (<form onSubmit ={handleSubmit}>
         <label htmlFor='new-todo'>Enter a new todo item`</label>
         <div className='new-todo'>
-          <input 
-          id='new-todo' 
-          type='text' 
-          value={newTodo} 
-          onChange={(e)=>setNewTodo(e.target.value)}
-          placeholder="Enter new todo"
-          />
+            <input 
+            id='new-todo' 
+            type='text' 
+            value={newTodo} 
+            onChange={(e)=>setNewTodo(e.target.value)}
+            placeholder="Enter new todo"
+            />
         </div>
         <button className='submit'>
             <FontAwesomeIcon icon={faUpload}/>
@@ -29,7 +29,7 @@ const TodoList = () => {
   </form>)
   return (
     {newItemSection}
-    //show all todos
+    //show all todos 
   )
 }
 
