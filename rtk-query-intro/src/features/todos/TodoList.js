@@ -8,7 +8,7 @@ const TodoList = () => {
 
     const handleSubmit = (e)=>{
     e.preventDefault();
-
+    //add todo to state
     setNewTodo('');
 }
 
@@ -28,7 +28,8 @@ const TodoList = () => {
         </button>
   </form>)
   return (
-    <div>TodoList</div>
+    {newItemSection}
+    //show all todos
   )
 }
 
