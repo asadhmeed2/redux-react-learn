@@ -63,7 +63,7 @@ const TodoList = () => {
             </div>
             <button className="trash" onClick={() => deleteTodo({ id: todo.id })}>
                 <FontAwesomeIcon icon={faTrash} />
-            </button>
+            </button> 
         </article>
     )
     })
