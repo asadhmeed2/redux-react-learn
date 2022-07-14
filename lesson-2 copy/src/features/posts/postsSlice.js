@@ -10,8 +10,10 @@
 import { 
     createSelector,
     createEntityAdapter
- } from '@reduxjs/toolkit';
- import {apiSlice} from '../api/apiSlice'
+} from '@reduxjs/toolkit';
+
+//RTK api
+import {apiSlice} from '../api/apiSlice'
 import { sub } from 'date-fns';
 
 // normal Redux api calls
@@ -25,11 +27,14 @@ const postsAdapter = createEntityAdapter({
 })
 
 // part of the state normalization solution
-const initialState =postsAdapter.getInitialState({
-    status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
-    error: null,
-    count: 0,
-})
+// const initialState =postsAdapter.getInitialState({
+//     status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
+//     error: null,
+//     count: 0,
+// })
+
+//RTK api
+const initialState =postsAdapter.getInitialState()
 
 // const initialState ={
 //     posts: [],
