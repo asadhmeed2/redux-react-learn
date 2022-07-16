@@ -1,23 +1,12 @@
-//before RTK api 
-// import { 
-//     createSlice,
-//     createAsyncThunk,
-//     createSelector,
-//     createEntityAdapter
-//  } from '@reduxjs/toolkit';
 
-//RTK api
 import { 
+    createSlice,
+    createAsyncThunk,
     createSelector,
     createEntityAdapter
-} from '@reduxjs/toolkit';
-
-//RTK api
-import {apiSlice} from '../api/apiSlice'
+ } from '@reduxjs/toolkit';
 import { sub } from 'date-fns';
-
-// normal Redux api calls
-// import axios from 'axios';
+import axios from 'axios';
 
 const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -27,14 +16,12 @@ const postsAdapter = createEntityAdapter({
 })
 
 // part of the state normalization solution
-// const initialState =postsAdapter.getInitialState({
-//     status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
-//     error: null,
-//     count: 0,
-// })
+const initialState =postsAdapter.getInitialState({
+    status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
+    error: null,
+    count: 0,
+})
 
-//RTK api
-const initialState =postsAdapter.getInitialState()
 
 // const initialState ={
 //     posts: [],
@@ -44,36 +31,36 @@ const initialState =postsAdapter.getInitialState()
 // }
 
 // normal Redux api calls
-// export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-//     const response = await axios.get(POSTS_URL)
-//     return response.data
-// })
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
+    const response = await axios.get(POSTS_URL)
+    return response.data
+})
 
-// export const addNewPost = createAsyncThunk('posts/addNewPost', async (initialPost) => {
-//     const response = await axios.post(POSTS_URL, initialPost)
-//     return response.data
-// })
+export const addNewPost = createAsyncThunk('posts/addNewPost', async (initialPost) => {
+    const response = await axios.post(POSTS_URL, initialPost)
+    return response.data
+})
 
-// export const updatePost = createAsyncThunk('posts/updatePost', async (initialPost) => {
-//     const { id } = initialPost;
-//     try {
-//         const response = await axios.put(`${POSTS_URL}/${id}`, initialPost)
-//         return response.data
-//     } catch (err) {
-//         //return err.message 
-//         return initialPost;// becuse we connot update jsonplaceholder api post 
-//     }
-// })
-// export const deletePost = createAsyncThunk('posts/deletePost', async(initialPost) => {
-//     const { id } =initialPost;
-//     try{
-//         const response = await axios.delete(`${POSTS_URL}/${id}`)
-//         if(response?.status === 200) return initialPost;
-//         return `${response?.status}: ${response?.statusText}`;
-//     }catch (err) {
-//         return err.message;
-//     }
-// })
+export const updatePost = createAsyncThunk('posts/updatePost', async (initialPost) => {
+    const { id } = initialPost;
+    try {
+        const response = await axios.put(`${POSTS_URL}/${id}`, initialPost)
+        return response.data
+    } catch (err) {
+        //return err.message 
+        return initialPost;// becuse we connot update jsonplaceholder api post 
+    }
+})
+export const deletePost = createAsyncThunk('posts/deletePost', async(initialPost) => {
+    const { id } =initialPost;
+    try{
+        const response = await axios.delete(`${POSTS_URL}/${id}`)
+        if(response?.status === 200) return initialPost;
+        return `${response?.status}: ${response?.statusText}`;
+    }catch (err) {
+        return err.message;
+    }
+})
 
 const postsSlice = createSlice({
     name: 'posts',
