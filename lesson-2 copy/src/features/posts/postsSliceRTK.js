@@ -10,10 +10,6 @@ import {
 import {apiSlice} from '../api/apiSlice'
 import { sub } from 'date-fns';
 
-// normal Redux api calls
-// import axios from 'axios';
-
-const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
 
 // part of the state normalization solution
 const postsAdapter = createEntityAdapter({
