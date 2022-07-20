@@ -2,12 +2,10 @@
 
 import { useSelector } from 'react-redux';
 
- // part of the state normalization solution
-import { selectPostIds, getPostsStatus, getPostsError } from './postsSlice';
 import { useGetPostsQuery } from './postsSliceRTK';
-// import { selectAllPosts, getPostsStatus, getPostsError } from './postsSlice';
 
 import PostsExcerpt from "./postsExcerpt"
+import { selectPostIds } from './postsSlice';
 
 
 const PostsList= ()=>{
@@ -19,20 +17,17 @@ const PostsList= ()=>{
         error,
     } = useGetPostsQuery()
 
-    // part of the state normalization solution
     const orderedPostsIds = useSelector(selectPostIds)
-    // const posts = useSelector(selectAllPosts)
-    const postsStatus = useSelector(getPostsStatus)
     
     let content;
-    if(postsStatus === 'loading'){
+    if(isLoading){
         content =<p>"loading..."</p>
-    }else if(postsStatus === 'succeeded'){
+    }else if(isSuccess){
          // part of the state normalization solution
         content = orderedPostsIds.map(postId =><PostsExcerpt key={postId} postId={postId}/>)
         // const orderedPostes = posts.slice().sort((a,b)=>b.date.localeCompare(a.date))
         // content = orderedPostes.map(post=> <PostsExcerpt key={post.id} post={post}/>)
-    }else if(postsStatus === 'failed'){
+    }else if(isError){
         content =<p>{error}</p>
     }
 
