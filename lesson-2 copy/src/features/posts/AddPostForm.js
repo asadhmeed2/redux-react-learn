@@ -1,20 +1,20 @@
 import {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { addNewPost } from './postsSlice';
 import { selectAllUsers } from '../users/usersSlice';
+import { useAddNewPostMutation } from './postsSliceRTK';
 
 import './posts.style.css'
 
 const AddPostForm = () => {
-    const despatch = useDispatch();
+
+    const [addNewPost , { isLoading }] =useAddNewPostMutation();
     const navigate = useNavigate();
 
     const [title,setTitle] = useState('');
     const [content,setContent] = useState('');
     const [userId,setUserId] = useState('');
-    const [addRequestSTatus,setAddRequestStatus]= useState('idle');
     
     const users = useSelector(selectAllUsers)
 
@@ -22,23 +22,20 @@ const AddPostForm = () => {
     const onContentChanged = (e) => setContent(e.target.value)
     const onAuthorChanged = (e) => setUserId(e.target.value)
     
-    const canSave = [title,content,userId].every(Boolean) && addRequestSTatus === 'idle';
+    const canSave = [title,content,userId].every(Boolean) && !isLoading;
 
-    const onSaveHandler = () =>{
+    const onSaveHandler = async () =>{
         if(canSave){
             try{
-
-                setAddRequestStatus('pending');
-                despatch(addNewPost( { title, body:content, userId } )).unwrap();
                 
+                await addNewPost({ title ,body: content ,userId}).unwrap()
+
                 setTitle('');
                 setContent('');
                 setUserId('');
                 navigate('/');
             }catch(err){
                 console.error('Failed to save the post', err);
-            }finally{
-                setAddRequestStatus('idle')
             }
         }
     }

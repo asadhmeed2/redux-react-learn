@@ -121,7 +121,6 @@ export const {
     useAddNewPostMutation,
     useUpdatePostMutation,
     useDeletePostMutation
-
 } =extendedApiSlice
 
 export const selectPostsResult = extendedApiSlice.endpoints.getPosts.select();
