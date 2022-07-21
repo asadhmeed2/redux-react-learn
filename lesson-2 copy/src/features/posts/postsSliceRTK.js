@@ -125,17 +125,6 @@ export const {
 
 export const selectPostsResult = extendedApiSlice.endpoints.getPosts.select();
 
-const selectPostsData = createSelector(
-    selectPostsResult,
-    postsResult => postsResult.data,
-)
-
- // part of the state normalization solution
- export const {
-    selectAll: selectAllPosts,
-    selectById: selectPostById,
-    selectIds: selectPostIds
- } = postsAdapter.getSelectors(state => selectPostsData(state) ?? initialState)
 
 
 

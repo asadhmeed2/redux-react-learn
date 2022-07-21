@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import './header.style.css';
-import { useSelector, useDispatch } from "react-redux";
-
 
 const Header = ( )=>{
 
-    const dispatch = useDispatch();
     return (
     <header className="nav-container">
         <h1 className="logo">Redux Blog</h1>
