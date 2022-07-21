@@ -19,7 +19,7 @@ const postsAdapter = createEntityAdapter({
 const initialState =postsAdapter.getInitialState({
     status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
     error: null,
-    count: 0,
+
 })
 
 
