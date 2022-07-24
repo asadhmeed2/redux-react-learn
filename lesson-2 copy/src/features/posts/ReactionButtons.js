@@ -1,5 +1,4 @@
-import { useDispatch } from "react-redux"
-import { reactionAdded } from './postsSlice'
+import { useAddNewPostMutation } from "./postsSliceRTK";
 
 const reactionEmoji = {
     thumbsUp: '👍',
@@ -10,7 +9,8 @@ const reactionEmoji = {
 }
 
 const ReactionButtons = ( { post } ) => {
-    const dispatch = useDispatch();
+
+    const [addReaction] =useAddNewPostMutation();
   
     const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
         return (
