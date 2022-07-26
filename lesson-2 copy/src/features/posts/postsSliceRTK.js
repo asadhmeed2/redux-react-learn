@@ -15,6 +15,8 @@ const postsAdapter = createEntityAdapter({
     sortComparer: (a, b) => b.date.localeCompare(a.date)
 })
 
+//stuck on fixing a bug :(
+
 //RTK api
 const initialState =postsAdapter.getInitialState()
 
