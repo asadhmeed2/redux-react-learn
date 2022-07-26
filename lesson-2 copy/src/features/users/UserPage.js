@@ -21,8 +21,8 @@ const UserPage = () => {
     if (isLoading) {
         content = <p>Loading...</p>
     }else if (isSuccess) {
-        const { ids, entities }=postsForUser;
-        content = ids?.map(id =>(
+        const { ids, entities } = postsForUser;
+        content = ids.map(id =>(
             <li key={id}>
                 <Link to={`/post/${id}`}>{entities[id].title}</Link>
             </li>

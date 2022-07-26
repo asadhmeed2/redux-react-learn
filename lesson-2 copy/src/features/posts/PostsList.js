@@ -1,11 +1,7 @@
-
-
 import { useSelector } from 'react-redux';
-
 import { useGetPostsQuery } from './postsSliceRTK';
-
 import PostsExcerpt from "./postsExcerpt"
-import { selectPostIds } from './postsSlice';
+import { selectPostIds } from './postsSliceRTK';
 
 
 const PostsList= ()=>{
