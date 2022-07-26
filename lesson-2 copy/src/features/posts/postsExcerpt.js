@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 // part of the state normalization solution
 import { useSelector } from "react-redux";
-import { selectPostById } from "./postsSlice";
+import { selectPostById } from "./postsSliceRTK";
 import './posts.style.css';
 
 
@@ -18,13 +18,13 @@ const PostsExcerpt = ({ postId }) => {
     <article className='post'>
             <h2 className='post-title'>{post?.title}</h2>
             <p className='post-content'>{post?.body.substring(0,75)}...</p>
-            <p className ='postCredits'>
+            <div className ='postCredits'>
                 <div>
                 <Link to={`post/${post?.id}`}>View Post</Link>
                 </div>
                 <PostAuthor userId = { post?.userId }/> 
                 <TimeAgo timestamp={post?.date}/>
-            </p>
+            </div>
             <ReactionButtons post={post}/>
         </article>
   )

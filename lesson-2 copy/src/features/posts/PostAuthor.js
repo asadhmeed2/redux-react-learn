@@ -9,7 +9,7 @@ const PostAuthor = ({ userId }) => {
 
     const users = useSelector(selectAllUsers);
 
-    const author = useMemo(()=> users.find(user=> parseInt(user.id) === userId),[userId, users])
+    const author = useMemo(()=> users?.find(user=> parseInt(user.id) === userId),[userId, users])
 
   return (<>
     <span>by {author ? <Link to={`/user/${userId}`}>{author.name}</Link> : 'Unknown author'}</span>
