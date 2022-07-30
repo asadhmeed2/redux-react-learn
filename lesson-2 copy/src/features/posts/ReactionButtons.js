@@ -1,4 +1,5 @@
 import { useAddNewPostMutation } from "./postsSliceRTK";
+import './reactionButtons.style.css';
 
 const reactionEmoji = {
     thumbsUp: '👍',
@@ -29,7 +30,7 @@ const ReactionButtons = ( { post } ) => {
         )
     })
     
-    return <div>{reactionButtons}</div>
+    return <div className="reaction-buttons-container">{reactionButtons}</div>
 
 }
 

@@ -4,8 +4,12 @@
     border-radius:15px;
     padding: 10px;
     margin-bottom:15px;
-    width:40%;
+    width:30%;
     background: lavender;
+    font-family: sans-serif;
+}
+.post > *{
+    margin-bottom:15px;
 }
 
 .post-form{ 

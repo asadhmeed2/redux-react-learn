@@ -1,0 +1,9 @@
+.reactionButton{
+    border-radius:10px;
+    padding:5px;
+}
+
+.reaction-buttons-container{
+    display: flex;
+    gap: 5px;
+}
