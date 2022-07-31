@@ -1,4 +1,4 @@
-import { useAddNewPostMutation } from "./postsSliceRTK";
+import { useAddReactionMutation } from "./postsSlice";
 import './reactionButtons.style.css';
 
 const reactionEmoji = {
@@ -11,7 +11,7 @@ const reactionEmoji = {
 
 const ReactionButtons = ( { post } ) => {
 
-    const [addReaction] =useAddNewPostMutation();
+    const [ addReaction ] =useAddReactionMutation();
   
     const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
         return (
@@ -21,7 +21,7 @@ const ReactionButtons = ( { post } ) => {
                 className="reactionButton"
                 onClick={() =>{
                     const newValue = post.reactions[name] +1
-                    addReaction({ postId: post.id, reaction: {...post.reactions,[name]: newValue} })
+                    addReaction({ postId: post.id, reactions: {...post.reactions,[name]: newValue} })
                 }
                 }
             >

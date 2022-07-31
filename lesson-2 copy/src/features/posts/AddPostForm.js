@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { selectAllUsers } from '../users/usersSlice';
-import { useAddNewPostMutation } from './postsSliceRTK';
+import { useAddNewPostMutation } from './postsSlice';
 
 import './posts.style.css'
 

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom"
 import { getUserById } from "./usersSlice"
-import { useGetPostsByUserIdQuery } from "../posts/postsSliceRTK"
+import { useGetPostsByUserIdQuery } from "../posts/postsSlice"
 
 
 const UserPage = () => {

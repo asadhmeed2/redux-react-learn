@@ -4,7 +4,7 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { extendedApiSlice } from './features/posts/postsSliceRTK';
+import { extendedApiSlice } from './features/posts/postsSlice';
 import { ApiProvider } from '@reduxjs/toolkit/dist/query/react';
 import { Provider } from 'react-redux';
 import { store } from './app/storeRTK';

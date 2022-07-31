@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 // part of the state normalization solution
 import { useSelector } from "react-redux";
-import { selectPostById } from "./postsSliceRTK";
+import { selectPostById } from "./postsSlice";
 import './posts.style.css';
 
 

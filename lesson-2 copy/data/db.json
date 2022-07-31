@@ -287,10 +287,10 @@
       "title": "dolorem dolore est ipsam",
       "body": "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae",
       "reactions": {
-        "thumbsUp": 4,
-        "wow": 0,
+        "thumbsUp": 5,
+        "wow": 1,
         "heart": 0,
-        "rocket": 0,
+        "rocket": 1,
         "coffee": 5
       }
     },
@@ -1177,6 +1177,63 @@
         "coffee": 0
       },
       "id": 119
+    },
+    {
+      "postId": 8,
+      "reaction": {
+        "thumbsUp": 5,
+        "wow": 0,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 5
+      },
+      "userId": null,
+      "reactions": {
+        "thumbsUp": 0,
+        "wow": 0,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 0
+      },
+      "id": 120
+    },
+    {
+      "postId": 8,
+      "reaction": {
+        "thumbsUp": 5,
+        "wow": 0,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 5
+      },
+      "userId": null,
+      "reactions": {
+        "thumbsUp": 0,
+        "wow": 0,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 0
+      },
+      "id": 121
+    },
+    {
+      "postId": 8,
+      "reaction": {
+        "thumbsUp": 4,
+        "wow": 1,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 5
+      },
+      "userId": null,
+      "reactions": {
+        "thumbsUp": 0,
+        "wow": 0,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 0
+      },
+      "id": 122
     }
   ]
 }
