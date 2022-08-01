@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { selectAllUsers } from "../users/usersSlice";
-import { useUpdatePostMutation, useDeletePostMutation, selectPostById} from './postsSlice';
+import { useUpdatePostMutation, useDeletePostMutation, selectPostById } from './postsSlice';
 
 const EditPostForm = () => {
     const { postId } = useParams();
@@ -48,7 +48,7 @@ const EditPostForm = () => {
         }
     }
 
-    const usersOptions = users.map(user => (
+    const usersOptions = users?.map(user => (
         <option
             key={user.id}
             value={user.id}

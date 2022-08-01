@@ -1,5 +1,5 @@
 .nav-container{
-    background: rgb(140, 146, 91);
+    background: rgb(0, 0, 0);
     display: flex;
     padding:10px;
     justify-content:space-between;
@@ -17,5 +17,11 @@
 }
 .nav-link:hover{
     text-decoration: underline;
-    color: black;
+    color: rgba(6, 176, 249, 0.76);
+}
+.logo{
+    background: linear-gradient(to right,rgba(6, 176, 249, 0.301), rgba(37, 219, 219, 0.236));
+    color: white;
+    border-radius:15px;
+    padding: 0px 5px 5px 5px ;
 }
