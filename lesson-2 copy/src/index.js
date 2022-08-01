@@ -7,12 +7,12 @@ import reportWebVitals from './reportWebVitals';
 import { extendedApiSlice } from './features/posts/postsSlice';
 import { ApiProvider } from '@reduxjs/toolkit/dist/query/react';
 import { Provider } from 'react-redux';
-import { store } from './app/storeRTK';
-import { fetchUsers } from './features/users/usersSlice';
+import { store } from './app/store';
+import { usersApiSlice } from './features/users/usersSlice';
 
 
 store.dispatch(extendedApiSlice.endpoints.getPosts.initiate()); 
-store.dispatch(fetchUsers()); 
+store.dispatch(usersApiSlice.endpoints.getUsers.initiate());
 
 
 
