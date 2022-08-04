@@ -21,7 +21,8 @@
 }
 .logo{
     background: linear-gradient(to right,rgba(6, 176, 249, 0.301), rgba(37, 219, 219, 0.236));
-    color: white;
+    color: transparent;
+    background-clip :text;
     border-radius:15px;
     padding: 0px 5px 5px 5px ;
 }
