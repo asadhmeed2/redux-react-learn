@@ -30,3 +30,9 @@
     padding-left: 5px; 
     margin-top:10px
 }
+
+@media  (max-width: 768px){
+    .post {
+        width:40%;
+    }
+}
