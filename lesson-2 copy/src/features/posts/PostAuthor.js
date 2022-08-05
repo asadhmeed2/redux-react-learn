@@ -8,8 +8,6 @@ import { selectAllUsers } from '../users/usersSlice';
 const PostAuthor = ({ userId }) => {
 
   const users = useSelector(selectAllUsers);
-  console.log(userId);
-  console.log(users);
     
     const author = useMemo(()=> users?.find(user=> parseInt(user.id) === userId),[userId, users])
 
